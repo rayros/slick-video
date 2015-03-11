@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bower_components/slick.js/slick/slick.css"/>
+    <script src="bower_components/slick.js/slick/slick.js"></script>
+    <script src="bower_components/foundation/js/foundation.js"></script>
+    <script src="slick-init.js"></script>
+    <style>
+      .hero_slider {
+        background: black;
+        position: relative;
+        height: 400px;
+      }
+      .hero_slider .slick-list,
+      .hero_slider .slick-list .slick-track,
+      .hero_slider .slick-list .slick-track [slide],
+      .hero_slider .slick-list .slick-track [slide] video {
+        height: 100%;
+      }
+      .hero_slider .slick-list .slick-track [slide] {
+        background: gray;
+        position: relative;
+        cursor: pointer;
+      }
+      .hero_slider video {
+        width: 100%;
+        height: 100%;
+        background: blue;
+        position: absolute;
+      }
+      .hero_slider [content] {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .hero_slider .slick-dots {
+        width: 100%;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+      }
+      .hero_slider .slick-dots li {
+        display: inline-block;
+        cursor: pointer;
+      }
+      .hero_slider [nav-item] {
+        padding: 20px 5px;
+        display: inline-block;
+      }
+      .hero_slider [nav-item]:before {
+        content: '';
+        display: inline-block;
+        width: 26px;
+        background: #d0d0d0;
+        height: 2px;
+      }
+      .hero_slider [nav-item]:hover:before,
+      .hero_slider .slick-dots .slick-active [nav-item]:before {
+        background: #fff
+      }
+    </style>
+  </head>
+<body>
+<div class="hero_slider">
+  <div slide>
+    <video preload="none" loop>
+      <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></source>
+    </video>
+    <div content>asdas</div>
+  </div>
+  <div slide>
+    <video preload="none" loop>
+      <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4"></source>
+    </video>
+    <div content>asdas</div>
+  </div>
+  <div slide>aaa</div>
+  <div slide>aaa</div>
+</div>
+</body>
+</html>

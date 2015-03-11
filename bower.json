@@ -1,0 +1,13 @@
+{
+  "name": "slick-video",
+  "version": "0.0.0",
+  "authors": [
+    "Paweł Łaski <zniwus@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "slick.js": "~1.4.1",
+    "foundation": "~5.5.1"
+  }
+}
