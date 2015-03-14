@@ -56,7 +56,7 @@
         this.play();
       });
     });
-    // Retrun called slick on this object.
+    // Return called slick on this object.
     return (tmpSlick.bind(this))(arguments[0]);
   };
 }));
