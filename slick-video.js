@@ -17,20 +17,19 @@
   }
 }(function($) {
   var tmpSlick = $.fn.slick;
+  // Overwrite slick function.
   $.fn.slick = function () {
     // Init all video on first slide. 
     // Overwrite slick.[swipeStart, swipeEnd] and add handler for event 'beforeChange' 
     $(this).on('init', function(event, slick) {
       // Play first slide all videos.
-      var currentVideos = $(slick.$slides[slick.currentSlide]).find('video');
-      $.each(currentVideos, function(){
+      $(slick.$slides[slick.currentSlide]).find('video').each(function(){
         this.play();
       });
       // Pause all videos when swipe start on current slide.
       var oldSwipeStart = slick.swipeStart.bind(slick);
       slick.swipeStart = function(event) {
-        var currentVideos = $(this.$slides[this.currentSlide]).find('video');
-        $.each(currentVideos, function(){
+        $(this.$slides[this.currentSlide]).find('video').each(function(){
           this.pause();
         });
         oldSwipeStart(event);
@@ -39,20 +38,17 @@
       var oldSwipeEnd = slick.swipeEnd.bind(slick);
       slick.swipeEnd = function(event) {
         oldSwipeEnd(event);
-        var currentVideos = $(this.$slides[this.currentSlide]).find('video');
-        $.each(currentVideos, function(){
+        $(this.$slides[this.currentSlide]).find('video').each(function(){
           this.play();
         });
       };
     });
     // Pause all videos on current slide and play all videos on next slide.
     $(this).on('beforeChange', function(event, slick, currentSlide, nextSlide){
-      var currentVideos = $(slick.$slides[currentSlide]).find('video');
-      var nextVideos = $(slick.$slides[nextSlide]).find('video');
-      $.each(currentVideos, function(){
+      $(slick.$slides[currentSlide]).find('video').each(function(){
         this.pause();
       });
-      $.each(nextVideos, function(){
+      $(slick.$slides[nextSlide]).find('video').each(function(){
         this.play();
       });
     });
