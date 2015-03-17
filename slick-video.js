@@ -19,9 +19,10 @@
   var tmpSlick = $.fn.slick;
   // Overwrite slick function.
   $.fn.slick = function () {
+    var _ = $(this);
     // Init all video on first slide. 
     // Overwrite slick.[swipeStart, swipeEnd] and add handler for event 'beforeChange' 
-    $(this).on('init', function(event, slick) {
+    _.on('init', function(event, slick) {
       // Play first slide all videos.
       $(slick.$slides[slick.currentSlide]).find('video').each(function(){
         this.play();
@@ -44,7 +45,7 @@
       };
     });
     // Pause all videos on current slide and play all videos on next slide.
-    $(this).on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    _.on('beforeChange', function(event, slick, currentSlide, nextSlide){
       $(slick.$slides[currentSlide]).find('video').each(function(){
         this.pause();
       });
